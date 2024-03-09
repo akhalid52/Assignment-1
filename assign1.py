@@ -66,9 +66,9 @@ def valid_date(date):
 
 def leap_year(year):
     "takes a year in YYYY format, and returns True if it's a leap year, False otherwise."
-    # TODO reorganize code, enter code from after() here.
-    pass # TODO: delete this line, replace with return statement.
-
+    if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+        return True
+    return False
 
 def after(today):
     "after takes a valid date string in DD-MM-YYYY format and returns"
