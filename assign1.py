@@ -43,9 +43,26 @@ def days_in_mon(year):
    return days
 
 def valid_date(date):
-    "TODO enter docstring"
-    # return True or False 
-    pass # TODO: delete this line, replace with valid code.
+    "This function checks if the given date is valid."
+    try:
+       day, month, year = map(int, date.split('-'))
+       if month < 1 or month > 12:
+          return False, "Error: wrong month entered"
+       if day < 1 or day > 31:
+          return False, "Error: wrong day entered"
+       if month in [4, 6, 9, 11] and day > 30:
+          return False, "Error: wrong day entered"
+       if month == 2:
+          if (year % 4 == 0 and year % 100 !=0) or year %400 == 0:
+             if day > 29:
+                return False, "Error: wrong day entered"
+          elif day > 28:
+             return False, "Error: wrong day entered"
+       if year < 1000 or year > 9999:
+          return False, "Error: wrong date entered"
+       return True
+    except ValueError:
+       return False, "Error: wrong date entered"
 
 def leap_year(year):
     "takes a year in YYYY format, and returns True if it's a leap year, False otherwise."
