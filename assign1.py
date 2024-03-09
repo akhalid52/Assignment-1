@@ -156,10 +156,16 @@ def before(today):
         return prev_date
 
 def dbda(start_date, num_days):
-    end_date = 0
-    # create a loop
-    # call before() or after() as appropriate
-    # return end_date
+    "This function calculates the end date based on the provided date string"
+    "in DD-MM-YYYY format and number of days."
+    end_date = start_date
+    if num_days > 0:
+        for _ in range(num_days):
+            end_date = after(end_date)
+    elif num_days < 0:
+        for _ in range(abs(num_days)):
+            end_date = before(end_date)
+    return end_date
 
 if __name__ == "__main__":
     # process command line arguments
