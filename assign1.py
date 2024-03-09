@@ -114,9 +114,46 @@ def after(today):
         next_date = str(to_day).zfill(2)+"-"+str(to_month).zfill(2)+"-"+str(year)
         return next_date
 
-def before():
-    "TODO enter docstring."
-    pass # TODO replace this with code, using your algorithm document.
+def before(today):
+    "before takes a valid date string in DD-MM-YYYY format and returns"
+    "a date string for the previous day in DD-MM-YYYY format."
+    if len(today) != 10:
+        return '00-00-0000'
+    else:
+        str_day, str_month, str_year = today.split('-')
+        year = int(str_year)
+        month = int(str_month)
+        day = int(str_day)
+
+        lyear = year % 4
+        if lyear == 0:
+            feb_max = 29 # this is a leap year
+        else:
+            feb_max = 28 # this is not a leap year
+
+        lyear = year % 100
+        if lyear == 0:
+            feb_max = 28 # this is not a leap year
+
+        lyear = year % 400
+        if lyear == 0:
+            feb_max = 29 # this is a leap year
+
+        tmp_day = day - 1 # previous day
+
+        mon_max = { 1:31, 2:feb_max, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+        if tmp_day < 1:
+            prev_month = month - 1
+            if prev_month < 1:
+                prev_month = 12
+                year = year - 1
+            to_day = mon_max[prev_month]  # if tmp_day < 1, set to the last day of previous month
+        else:
+            to_day = tmp_day
+            prev_month = month
+
+        prev_date = str(to_day).zfill(2)+"-"+str(prev_month).zfill(2)+"-"+str(year)
+        return prev_date
 
 def dbda(start_date, num_days):
     end_date = 0
