@@ -24,10 +24,23 @@ def usage():
    "This function returns the usage of the script."
     return "Usage: python3 assign1.py DD-MM-YYYY N"
 
-def days_in_mon(month):
-    "TODO enter docstring"
-    # return days
-    pass # TODO: delete this line, replace with valid code.
+def days_in_mon(year):
+    "This function returns a dictionary containing the total number of days in each month for the given year."
+   days = {
+      1: 31,
+      2: 29 if leap_year(year) else 28,
+      3: 31,
+      4: 30,
+      5: 31,
+      6: 30,
+      7: 31,
+      8: 31,
+      9: 30,
+      10: 31,
+      11: 30,
+      12: 31,
+   }
+   return days
 
 def valid_date(date):
     "TODO enter docstring"
