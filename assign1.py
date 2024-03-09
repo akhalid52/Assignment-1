@@ -3,19 +3,21 @@
 
 '''
 OPS435 Assignment 1 - Fall 2021
-Program: assign1.py (replace student_id with your Seneca User name)
-Author: "Student Name"
+Program: assign1.py akhalid52 (replace student_id with your Seneca User name)
+Author: "Abdulmanan Khalid"
 The python code in this file (assign1.py) is original work written by
-"Student Name". No code in this file is copied from any other source 
+"Abdulmanan Khalid". No code in this file is copied from any other source 
 except those provided by the course instructor, including any person, 
 textbook, or on-line resource. I have not shared this python script 
 with anyone or anything except for submission for grading.  
 I understand that the Academic Honesty Policy will be enforced and 
 violators will be reported and appropriate action will be taken.
 
-Description: <Enter your documentation here>
+Description: This Python script calculates the end date based on a given start date and number of days,
+considering leap years and valid date formats and prints the result.
+It uses functions to validate dates, handle leap years, and perform date calculations while also providing error messages for invalid inputs.
 
-Date: 
+Date: 08/03/2024
 '''
 
 def usage():
