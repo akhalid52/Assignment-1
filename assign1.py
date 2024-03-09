@@ -21,8 +21,8 @@ Date: 08/03/2024
 '''
 
 def usage():
-    "TODO enter docstring"
-    pass # TODO: delete this line, replace with valid code.
+   "This function returns the usage of the script."
+    return "Usage: python3 assign1.py DD-MM-YYYY N"
 
 def days_in_mon(month):
     "TODO enter docstring"
