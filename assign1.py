@@ -168,7 +168,15 @@ def dbda(start_date, num_days):
     return end_date
 
 if __name__ == "__main__":
-    # process command line arguments
-    # call dbda()
-    # output the result
-    pass
+    import sys
+    if len(sys.argv) != 3:
+        print(usage())
+    else:
+        start_date = sys.argv[1]
+        num_days = int(sys.argv[2])
+        is_valid, msg = valid_date(start_date)
+        if is_valid:
+            end_date = dbda(start_date, num_days)
+            print(end_date)
+        else:
+            print(msg)
