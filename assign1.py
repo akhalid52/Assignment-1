@@ -3,8 +3,9 @@
 
 '''
 OPS435 Assignment 1 - Fall 2021
-Program: assign1.py akhalid52 (replace student_id with your Seneca User name)
+Program: assign1.py (replace student_id with your Seneca User name)
 Author: "Abdulmanan Khalid"
+Student ID: "akhalid52"
 The python code in this file (assign1.py) is original work written by
 "Abdulmanan Khalid". No code in this file is copied from any other source 
 except those provided by the course instructor, including any person, 
@@ -21,26 +22,27 @@ Date: 08/03/2024
 '''
 
 def usage():
-   "This function returns the usage of the script."
-    return "Usage: python3 assign1.py DD-MM-YYYY N"
+	"This function returns the usage of the script."
+	return "Usage: python3 assign1.py DD-MM-YYYY N"
 
 def days_in_mon(year):
-    "This function returns a dictionary containing the total number of days in each month for the given year."
-   days = {
-      1: 31,
-      2: 29 if leap_year(year) else 28,
-      3: 31,
-      4: 30,
-      5: 31,
-      6: 30,
-      7: 31,
-      8: 31,
-      9: 30,
-      10: 31,
-      11: 30,
-      12: 31,
-   }
-   return days
+    "This function returns a dictionary containing the total number of days"
+    "in each month for the given year."
+    days = {
+       1: 31,
+       2: 29 if leap_year(year) else 28,
+       3: 31,
+       4: 30,
+       5: 31,
+       6: 30,
+       7: 31,
+       8: 31,
+       9: 30,
+       10: 31,
+       11: 30,
+       12: 31,
+    }
+    return days
 
 def valid_date(date):
     "This function checks if the given date is valid."
@@ -60,7 +62,7 @@ def valid_date(date):
              return False, "Error: wrong day entered"
        if year < 1000 or year > 9999:
           return False, "Error: wrong date entered"
-       return True
+       return True, None
     except ValueError:
        return False, "Error: wrong date entered"
 
